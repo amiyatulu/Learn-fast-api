@@ -1,5 +1,7 @@
 # Learn-fast-api
 
+Fast api boilerplate for arangodb and graphql
+
 ```
 mkdir fastapi_learn_project
 cd fastapi_learn_project
