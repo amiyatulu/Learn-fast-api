@@ -1,5 +1,6 @@
 import graphene
 from database import db
+from typing import List
 
 from serializers import (
     UserGrapheneInputModel,
@@ -14,11 +15,16 @@ from serializers import (
 
 
 class Query(graphene.ObjectType):
-    say_hello = graphene.String(name=graphene.String(default_value='Test Driven'))
+    all_users = graphene.List(UserGrapheneModel)
 
     @staticmethod
-    def resolve_say_hello(parent, info, name):
-        return f'Hello {name}'
+    def resolve_all_users(parent, info):
+        # print(info.context['request'])
+        cursor = db.aql.execute(
+         'FOR s IN user RETURN s'   
+        )
+        usermodels = [UserModel(**document) for document in cursor]
+        return usermodels
 
 
 class CreateUser(graphene.Mutation):
