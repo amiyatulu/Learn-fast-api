@@ -20,6 +20,8 @@ class Query(graphene.ObjectType):
     @staticmethod
     def resolve_all_users(parent, info):
         # print(info.context['request'])
+        #info.context['request'].state.authorize.jwt_required()
+        
         cursor = db.aql.execute(
          'FOR s IN user RETURN s'   
         )

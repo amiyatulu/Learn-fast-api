@@ -4,4 +4,4 @@ from arango import ArangoClient
 client = ArangoClient(hosts='http://localhost:8529')
 
 # Connect to "test" database as root user.
-db = client.db('fastapidemo', username='root', password='1234')
+db = client.db('fastapidemo', username='root', password='@tulan123#')
