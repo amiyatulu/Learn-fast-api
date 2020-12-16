@@ -13,3 +13,7 @@ pip3 install fastapi uvicorn graphene graphene-pydantic==0.1.0 python-arango fas
 
 pip3 freeze > requirements.txt
 ```
+
+Docs:
+App with fastapi, Arangodb and Graphql
+https://biotoolsinsilico.blogspot.com/2020/12/app-with-fastapi-arangodb-and-graphql.html

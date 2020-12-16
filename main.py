@@ -77,13 +77,14 @@ def user(Authorize: AuthJWT = Depends()):
 graphql_app = GraphQLApp(schema=graphene.Schema(query=Query, mutation=Mutation))
 
 
+# Access graphiql ide here
 @app.get('/graphiql')
 async def graphiql(request: Request):
     request._url = URL('/graphql')
     return await graphql_app.handle_graphiql(request=request)
 
 
-
+# request api from frontend here
 @app.post("/graphql")
 async def graph(request: Request, Authorize: AuthJWT = Depends() ):
     request.state.authorize = Authorize

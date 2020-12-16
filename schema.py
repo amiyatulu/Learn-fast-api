@@ -5,10 +5,6 @@ from typing import List
 from serializers import (
     UserGrapheneInputModel,
     UserGrapheneModel,
-    PostGrapheneInputModel,
-    PostGrapheneModel,
-    CommentGrapheneInputModel,
-    CommentGrapheneModel,
     UserModel,
 )
 
